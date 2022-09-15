@@ -11,6 +11,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var OurView: UIView!
     
+    @IBOutlet weak var Rectangle: UIView!
     override func viewDidLoad() {
         super.viewDidLoad();
     }
@@ -19,6 +20,8 @@ class ViewController: UIViewController {
             CGFloat.random(in: 0 ..< 2 * 128 ) / 255;
         }
         
+        Rectangle.layer.cornerRadius = CGFloat.random(in: 0 ..<  (Rectangle.frame.height / 2));
+
         OurView.backgroundColor = UIColor(
             red: getRandomValue(),
             green: getRandomValue(),
