@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68553F1DFCEFEC6122D5F7C7 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68553349F1D8A6BB6E54E09D /* UIColorExtension.swift */; };
 		A0D31DEA28D74CBE00ED8E76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D31DE928D74CBE00ED8E76 /* AppDelegate.swift */; };
 		A0D31DEC28D74CBE00ED8E76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D31DEB28D74CBE00ED8E76 /* SceneDelegate.swift */; };
 		A0D31DEE28D74CBE00ED8E76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D31DED28D74CBE00ED8E76 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		68553349F1D8A6BB6E54E09D /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		A0D31DE628D74CBE00ED8E76 /* akshubnikovPW1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = akshubnikovPW1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D31DE928D74CBE00ED8E76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0D31DEB28D74CBE00ED8E76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				A0D31DF228D74CC400ED8E76 /* Assets.xcassets */,
 				A0D31DF428D74CC400ED8E76 /* LaunchScreen.storyboard */,
 				A0D31DF728D74CC400ED8E76 /* Info.plist */,
+				68553349F1D8A6BB6E54E09D /* UIColorExtension.swift */,
 			);
 			path = akshubnikovPW1;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				A0D31DEE28D74CBE00ED8E76 /* ViewController.swift in Sources */,
 				A0D31DEA28D74CBE00ED8E76 /* AppDelegate.swift in Sources */,
 				A0D31DEC28D74CBE00ED8E76 /* SceneDelegate.swift in Sources */,
+				68553F1DFCEFEC6122D5F7C7 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,15 +439,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MA9ZVR88CQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = akshubnikovPW1/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = colors.;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -453,7 +462,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -462,15 +471,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MA9ZVR88CQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = akshubnikovPW1/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = colors.;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -480,7 +494,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
