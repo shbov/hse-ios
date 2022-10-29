@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0347282290D77D900A00ED7 /* ColorPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0347281290D77D900A00ED7 /* ColorPaletteView.swift */; };
+		A0347285290D799300A00ED7 /* ColorPaletteViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0347284290D799300A00ED7 /* ColorPaletteViewExtension.swift */; };
+		A0347289290D7E9300A00ED7 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0347288290D7E9300A00ED7 /* UIColorExtension.swift */; };
 		A049664C28E5D13100909175 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A049664B28E5D13100909175 /* AppDelegate.swift */; };
 		A049664E28E5D13100909175 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A049664D28E5D13100909175 /* SceneDelegate.swift */; };
 		A049665528E5D13400909175 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A049665428E5D13400909175 /* Assets.xcassets */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A0347281290D77D900A00ED7 /* ColorPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPaletteView.swift; sourceTree = "<group>"; };
+		A0347284290D799300A00ED7 /* ColorPaletteViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPaletteViewExtension.swift; sourceTree = "<group>"; };
+		A0347288290D7E9300A00ED7 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		A049664828E5D13100909175 /* akshubnikovPW2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = akshubnikovPW2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A049664B28E5D13100909175 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A049664D28E5D13100909175 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A0347283290D798800A00ED7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A0347284290D799300A00ED7 /* ColorPaletteViewExtension.swift */,
+				A0347288290D7E9300A00ED7 /* UIColorExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		A049663F28E5D13100909175 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +71,7 @@
 		A049664A28E5D13100909175 /* akshubnikovPW2 */ = {
 			isa = PBXGroup;
 			children = (
+				A0347283290D798800A00ED7 /* Extensions */,
 				A049664B28E5D13100909175 /* AppDelegate.swift */,
 				A049666528E5EF6C00909175 /* Views */,
 				A049664D28E5D13100909175 /* SceneDelegate.swift */,
@@ -71,6 +87,7 @@
 			children = (
 				A049666328E5E8E400909175 /* CALayer+ApplyShadow.swift */,
 				A049666128E5D5F800909175 /* UIView_Pin.swift */,
+				A0347281290D77D900A00ED7 /* ColorPaletteView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -154,8 +171,11 @@
 			files = (
 				A049666028E5D27B00909175 /* WelcomeViewController.swift in Sources */,
 				A049664C28E5D13100909175 /* AppDelegate.swift in Sources */,
+				A0347285290D799300A00ED7 /* ColorPaletteViewExtension.swift in Sources */,
+				A0347289290D7E9300A00ED7 /* UIColorExtension.swift in Sources */,
 				A049666228E5D5F800909175 /* UIView_Pin.swift in Sources */,
 				A049666428E5E8E400909175 /* CALayer+ApplyShadow.swift in Sources */,
+				A0347282290D77D900A00ED7 /* ColorPaletteView.swift in Sources */,
 				A049664E28E5D13100909175 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,7 +233,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -267,7 +287,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -283,7 +303,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = MA9ZVR88CQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = akshubnikovPW2/Info.plist;
@@ -298,7 +318,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = shbov.akshubnikovPW2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -316,7 +336,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = MA9ZVR88CQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = akshubnikovPW2/Info.plist;
@@ -331,7 +351,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = shbov.akshubnikovPW2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

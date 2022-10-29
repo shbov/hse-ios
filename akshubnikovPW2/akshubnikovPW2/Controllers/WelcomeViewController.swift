@@ -13,6 +13,11 @@ final class WelcomeViewController: UIViewController {
     private let valueLabel = UILabel()
     private var value: Int = 0
     
+    private var buttonsSV = UIStackView()
+    private var commentView = UIView()
+    
+    private let colorPaletteView = ColorPaletteView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -47,15 +52,18 @@ final class WelcomeViewController: UIViewController {
     
     private func setupView() {
         view.backgroundColor = .systemGray6
+        // commentView.isHidden = true
+        
+        colorPaletteView.isHidden = true
         setupIncrementButton()
         setupValueLabel()
         setupCommentView()
         setupMenuButtons()
+        setupColorControlSV()
     }
     
     @discardableResult
     private func setupCommentView() -> UIView {
-        let commentView = UIView()
         commentView.backgroundColor = .white
         commentView.layer.cornerRadius = 12
         view.addSubview(commentView)
@@ -134,11 +142,11 @@ final class WelcomeViewController: UIViewController {
         let notesButton = makeMenuButton(title: "📝")
         let newsButton = makeMenuButton(title: "📰")
         
-        let buttonsSV = UIStackView(arrangedSubviews: [
+        buttonsSV = UIStackView(arrangedSubviews: [
             colorsButton,
             notesButton,
             newsButton
-        ])
+        ]);
         
         buttonsSV.spacing = 12
         buttonsSV.axis = .horizontal
@@ -146,5 +154,45 @@ final class WelcomeViewController: UIViewController {
         self.view.addSubview(buttonsSV)
         buttonsSV.pin(to: self.view, [.left, .right], 24)
         buttonsSV.pinBottom(to: self.view, 24)
+        
+        colorsButton.addTarget(self, action: #selector(paletteButtonPressed), for: .touchUpInside)
+    }
+    
+    private func setupColorControlSV() {
+        colorPaletteView.isHidden = true
+        view.addSubview(colorPaletteView)
+        colorPaletteView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            colorPaletteView.topAnchor.constraint(
+                equalTo: incrementButton.bottomAnchor,
+                constant: 8),
+            colorPaletteView.leadingAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.leadingAnchor,
+                constant: 24),
+            colorPaletteView.trailingAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.trailingAnchor,
+                constant: -24),
+            colorPaletteView.bottomAnchor.constraint(
+                equalTo: buttonsSV.topAnchor,
+                constant: -8)
+        ]);
+        
+        colorPaletteView.addTarget(self, action: #selector(changeColor), for: .touchDragInside)
+    }
+    
+    @objc
+    private func paletteButtonPressed() {
+        colorPaletteView.isHidden = false
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        
+        generator.impactOccurred()
+    }
+    
+    @objc
+    private func changeColor() {
+        UIView.animate(withDuration: 1, animations:  {
+            self.view.backgroundColor = self.colorPaletteView.chosenColor
+        });
     }
 }
