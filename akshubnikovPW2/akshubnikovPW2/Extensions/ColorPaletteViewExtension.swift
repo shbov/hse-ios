@@ -17,6 +17,7 @@ extension ColorPaletteView {
             setupView()
             slider.value = value
             slider.addTarget(self, action: #selector(sliderMoved(_:)), for: .touchDragInside)
+            slider.addTarget(self, action: #selector(sliderPressed), for: .touchDown)
         }
 
         @available(*, unavailable)
@@ -37,6 +38,12 @@ extension ColorPaletteView {
         private func sliderMoved(_ slider: UISlider) {
             self.value = slider.value
             sendActions(for: .touchDragInside)
+        }
+        
+        @objc
+        private func sliderPressed(_ slider: UISlider) {
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
         }
     }
 }
