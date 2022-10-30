@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ColorPaletteView: UIControl {
+public final class ColorPaletteView: UIControl {
     private let stackView = UIStackView()
     
     private(set) var chosenColor: UIColor = .systemGray6
@@ -23,9 +23,9 @@ final class ColorPaletteView: UIControl {
     }
     
     private func setupView() {
-        let redControl = ColorSliderView(colorName: "Red", value: Float(chosenColor.rgba.red))
-        let greenControl = ColorSliderView(colorName: "Green", value: Float(chosenColor.rgba.green))
-        let blueControl = ColorSliderView(colorName: "Blue", value: Float(chosenColor.rgba.blue))
+        let redControl = ColorSliderView(colorName: "R", value: Float(chosenColor.rgba.red))
+        let greenControl = ColorSliderView(colorName: "G", value: Float(chosenColor.rgba.green))
+        let blueControl = ColorSliderView(colorName: "B", value: Float(chosenColor.rgba.blue))
         
         redControl.tag = 0
         greenControl.tag = 1
@@ -42,7 +42,7 @@ final class ColorPaletteView: UIControl {
         [redControl, greenControl, blueControl].forEach {
             $0.addTarget(self, action: #selector(sliderMoved(slider:)),for: .touchDragInside)
         }
- 
+        
         addSubview(stackView)
         stackView.pin(to: self, [.top, .left, .bottom, .right], 0)
     }
@@ -50,27 +50,27 @@ final class ColorPaletteView: UIControl {
     @objc
     private func sliderMoved(slider: ColorSliderView) {
         switch slider.tag {
-            case 0:
-                self.chosenColor = UIColor(
-                    red: CGFloat(slider.value),
-                    green: chosenColor.rgba.green,
-                    blue: chosenColor.rgba.blue,
-                    alpha: chosenColor.rgba.alpha
-                )
-            case 1:
-                self.chosenColor = UIColor(
-                    red: chosenColor.rgba.red,
-                    green: CGFloat(slider.value),
-                    blue: chosenColor.rgba.blue,
-                    alpha: chosenColor.rgba.alpha
-                )
-            default:
-                self.chosenColor = UIColor(
-                    red: chosenColor.rgba.red,
-                    green: chosenColor.rgba.green,
-                    blue: CGFloat(slider.value),
-                    alpha: chosenColor.rgba.alpha
-                )
+        case 0:
+            self.chosenColor = UIColor(
+                red: CGFloat(slider.value),
+                green: chosenColor.rgba.green,
+                blue: chosenColor.rgba.blue,
+                alpha: chosenColor.rgba.alpha
+            )
+        case 1:
+            self.chosenColor = UIColor(
+                red: chosenColor.rgba.red,
+                green: CGFloat(slider.value),
+                blue: chosenColor.rgba.blue,
+                alpha: chosenColor.rgba.alpha
+            )
+        default:
+            self.chosenColor = UIColor(
+                red: chosenColor.rgba.red,
+                green: chosenColor.rgba.green,
+                blue: CGFloat(slider.value),
+                alpha: chosenColor.rgba.alpha
+            )
         }
         
         sendActions(for: .touchDragInside)

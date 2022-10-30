@@ -38,7 +38,8 @@ final class WelcomeViewController: UIViewController {
         
         incrementButton.addTarget(self,
                                   action: #selector(incrementButtonPressed),
-                                  for: .touchUpInside)
+                                  for: .touchUpInside
+        )
     }
     
     private func setupValueLabel() {
@@ -120,7 +121,7 @@ final class WelcomeViewController: UIViewController {
         let generator = UIImpactFeedbackGenerator(style: .light)
         generator.impactOccurred()
         
-        UIView.animate(withDuration: 1, animations:  {
+        UIView.animate(withDuration: 1, animations: {
             self.updateUI();
             self.updateCommentLabel(value: self.value)
         })
@@ -152,6 +153,7 @@ final class WelcomeViewController: UIViewController {
         buttonsSV.axis = .horizontal
         buttonsSV.distribution = .fillEqually
         self.view.addSubview(buttonsSV)
+        
         buttonsSV.pin(to: self.view, [.left, .right], 24)
         buttonsSV.pinBottom(to: self.view, 24)
         
@@ -166,16 +168,20 @@ final class WelcomeViewController: UIViewController {
         NSLayoutConstraint.activate([
             colorPaletteView.topAnchor.constraint(
                 equalTo: incrementButton.bottomAnchor,
-                constant: 8),
+                constant: 8
+            ),
             colorPaletteView.leadingAnchor.constraint(
                 equalTo: view.safeAreaLayoutGuide.leadingAnchor,
-                constant: 24),
+                constant: 24
+            ),
             colorPaletteView.trailingAnchor.constraint(
                 equalTo: view.safeAreaLayoutGuide.trailingAnchor,
-                constant: -24),
+                constant: -24
+            ),
             colorPaletteView.bottomAnchor.constraint(
                 equalTo: buttonsSV.topAnchor,
-                constant: -8)
+                constant: -8
+            )
         ]);
         
         colorPaletteView.addTarget(self, action: #selector(changeColor), for: .touchDragInside)
@@ -183,7 +189,7 @@ final class WelcomeViewController: UIViewController {
     
     @objc
     private func paletteButtonPressed() {
-        colorPaletteView.isHidden = false
+        colorPaletteView.isHidden = !colorPaletteView.isHidden;
         let generator = UIImpactFeedbackGenerator(style: .medium)
         
         generator.impactOccurred()
@@ -191,8 +197,11 @@ final class WelcomeViewController: UIViewController {
     
     @objc
     private func changeColor() {
-        UIView.animate(withDuration: 1, animations:  {
-            self.view.backgroundColor = self.colorPaletteView.chosenColor
-        });
+        UIView.animate(
+            withDuration: 0.5,
+            animations: {
+                self.view.backgroundColor = self.colorPaletteView.chosenColor
+            }
+        )
     }
 }

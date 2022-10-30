@@ -2,21 +2,23 @@ import UIKit
 
 extension ColorPaletteView {
     public final class ColorSliderView: UIControl {
-        private let slider = UISlider()
-        private let colorLabel = UILabel()
-        
         private(set) var value: Float
-            
+        private let slider = UISlider()
+        public let colorLabel = UILabel()
+        
         init(colorName: String, value: Float) {
             self.value = value
             super.init(frame: .zero)
-            
-            slider.value = value
+
             colorLabel.text = colorName
+            colorLabel.textColor = .systemGray
+            colorLabel.font = .systemFont(ofSize: 14.0, weight: .regular)
+
             setupView()
+            slider.value = value
             slider.addTarget(self, action: #selector(sliderMoved(_:)), for: .touchDragInside)
         }
-        
+
         @available(*, unavailable)
         required init?(coder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
