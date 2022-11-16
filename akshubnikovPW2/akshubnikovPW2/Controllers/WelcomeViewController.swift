@@ -12,17 +12,17 @@ final class WelcomeViewController: UIViewController {
     private let incrementButton = UIButton(type: .system)
     private let valueLabel = UILabel()
     private var value: Int = 0
-    
+
     private var buttonsSV = UIStackView()
     private var commentView = UIView()
-    
+
     private let colorPaletteView = ColorPaletteView()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
-    
+
     private func setupIncrementButton() {
         incrementButton.setTitle("Press me", for: .normal)
         incrementButton.setTitleColor(.black, for: .normal)
@@ -30,18 +30,18 @@ final class WelcomeViewController: UIViewController {
         incrementButton.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .medium)
         incrementButton.backgroundColor = .white
         incrementButton.layer.applyShadow()
-        
+
         self.view.addSubview(incrementButton)
         incrementButton.setHeight(48)
         incrementButton.pinTop(to: self.view.centerYAnchor)
         incrementButton.pin(to: self.view, [.left, .right], 24)
-        
+
         incrementButton.addTarget(self,
                                   action: #selector(incrementButtonPressed),
                                   for: .touchUpInside
         )
     }
-    
+
     private func setupValueLabel() {
         valueLabel.font = .systemFont(ofSize: 40.0, weight: .bold)
         valueLabel.textColor = .black
@@ -50,11 +50,11 @@ final class WelcomeViewController: UIViewController {
         valueLabel.pinBottom(to: incrementButton.topAnchor, 16)
         valueLabel.pinCenterX(to: self.view.centerXAnchor)
     }
-    
+
     private func setupView() {
         view.backgroundColor = .systemGray6
         // commentView.isHidden = true
-        
+
         colorPaletteView.isHidden = true
         setupIncrementButton()
         setupValueLabel()
@@ -62,13 +62,13 @@ final class WelcomeViewController: UIViewController {
         setupMenuButtons()
         setupColorControlSV()
     }
-    
+
     @discardableResult
     private func setupCommentView() -> UIView {
         commentView.backgroundColor = .white
         commentView.layer.cornerRadius = 12
         view.addSubview(commentView)
-        
+
         commentView.pinTop(to: self.view.safeAreaLayoutGuide.topAnchor)
         commentView.pin(to: self.view, [.left, .right], 24)
         commentLabel.font = .systemFont(ofSize: 14.0, weight: .regular)
@@ -77,11 +77,11 @@ final class WelcomeViewController: UIViewController {
         commentLabel.textAlignment = .center
         commentLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         commentView.addSubview(commentLabel)
-        
+
         commentLabel.pin(to: commentView, [.top, .left, .bottom, .right], 16)
         return commentView
     }
-    
+
     func updateCommentLabel(value: Int) {
         switch value {
         case 0...10:
@@ -108,25 +108,25 @@ final class WelcomeViewController: UIViewController {
             break
         }
     }
-    
+
     func updateUI() {
         UIView.transition(with: commentLabel, duration: 0.25, options: .transitionFlipFromLeft, animations: {
             self.valueLabel.text = "\(self.value)"
         })
     }
-    
+
     @objc
     private func incrementButtonPressed() {
         self.value += 1
         let generator = UIImpactFeedbackGenerator(style: .light)
         generator.impactOccurred()
-        
+
         UIView.animate(withDuration: 1, animations: {
-            self.updateUI();
+            self.updateUI()
             self.updateCommentLabel(value: self.value)
         })
     }
-    
+
     private func makeMenuButton(title: String) -> UIButton {
         let button = UIButton()
         button.setTitle(title, for: .normal)
@@ -137,34 +137,34 @@ final class WelcomeViewController: UIViewController {
         button.heightAnchor.constraint(equalTo: button.widthAnchor).isActive = true
         return button
     }
-    
+
     private func setupMenuButtons() {
         let colorsButton = makeMenuButton(title: "🎨")
         let notesButton = makeMenuButton(title: "📝")
         let newsButton = makeMenuButton(title: "📰")
-        
+
         buttonsSV = UIStackView(arrangedSubviews: [
             colorsButton,
             notesButton,
             newsButton
-        ]);
-        
+        ])
+
         buttonsSV.spacing = 12
         buttonsSV.axis = .horizontal
         buttonsSV.distribution = .fillEqually
         self.view.addSubview(buttonsSV)
-        
+
         buttonsSV.pin(to: self.view, [.left, .right], 24)
         buttonsSV.pinBottom(to: self.view, 24)
-        
+
         colorsButton.addTarget(self, action: #selector(paletteButtonPressed), for: .touchUpInside)
     }
-    
+
     private func setupColorControlSV() {
         colorPaletteView.isHidden = true
         view.addSubview(colorPaletteView)
         colorPaletteView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             colorPaletteView.topAnchor.constraint(
                 equalTo: incrementButton.bottomAnchor,
@@ -182,19 +182,19 @@ final class WelcomeViewController: UIViewController {
                 equalTo: buttonsSV.topAnchor,
                 constant: -8
             )
-        ]);
-        
+        ])
+
         colorPaletteView.addTarget(self, action: #selector(changeColor), for: .touchDragInside)
     }
-    
+
     @objc
     private func paletteButtonPressed() {
-        colorPaletteView.isHidden = !colorPaletteView.isHidden;
+        colorPaletteView.isHidden = !colorPaletteView.isHidden
         let generator = UIImpactFeedbackGenerator(style: .medium)
-        
+
         generator.impactOccurred()
     }
-    
+
     @objc
     private func changeColor() {
         UIView.animate(

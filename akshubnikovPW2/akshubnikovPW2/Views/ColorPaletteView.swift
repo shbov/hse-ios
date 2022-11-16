@@ -9,28 +9,28 @@ import UIKit
 
 public final class ColorPaletteView: UIControl {
     private let stackView = UIStackView()
-    
+
     private(set) var chosenColor: UIColor = .systemGray6
-    
+
     init() {
         super.init(frame: .zero)
         setupView()
     }
-    
+
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func setupView() {
         let redControl = ColorSliderView(colorName: "R", value: Float(chosenColor.rgba.red))
         let greenControl = ColorSliderView(colorName: "G", value: Float(chosenColor.rgba.green))
         let blueControl = ColorSliderView(colorName: "B", value: Float(chosenColor.rgba.blue))
-        
+
         redControl.tag = 0
         greenControl.tag = 1
         blueControl.tag = 2
-        
+
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
         stackView.addArrangedSubview(redControl)
@@ -38,15 +38,15 @@ public final class ColorPaletteView: UIControl {
         stackView.addArrangedSubview(blueControl)
         stackView.backgroundColor = .white
         stackView.layer.cornerRadius = 12
-        
+
         [redControl, greenControl, blueControl].forEach {
-            $0.addTarget(self, action: #selector(sliderMoved(slider:)),for: .touchDragInside)
+            $0.addTarget(self, action: #selector(sliderMoved(slider:)), for: .touchDragInside)
         }
-        
+
         addSubview(stackView)
         stackView.pin(to: self, [.top, .left, .bottom, .right], 0)
     }
-    
+
     @objc
     private func sliderMoved(slider: ColorSliderView) {
         switch slider.tag {
@@ -72,7 +72,7 @@ public final class ColorPaletteView: UIControl {
                 alpha: chosenColor.rgba.alpha
             )
         }
-        
+
         sendActions(for: .touchDragInside)
     }
 }

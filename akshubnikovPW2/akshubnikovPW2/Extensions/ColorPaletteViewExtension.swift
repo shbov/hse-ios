@@ -5,7 +5,7 @@ extension ColorPaletteView {
         private(set) var value: Float
         private let slider = UISlider()
         public let colorLabel = UILabel()
-        
+
         init(colorName: String, value: Float) {
             self.value = value
             super.init(frame: .zero)
@@ -24,22 +24,22 @@ extension ColorPaletteView {
         required init?(coder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
-        
+
         private func setupView() {
             let stackView = UIStackView(arrangedSubviews: [colorLabel, slider])
             stackView.axis = .horizontal
             stackView.spacing = 8
-            
+
             addSubview(stackView)
             stackView.pin(to: self, [.top, .left, .bottom, .right], 12)
         }
-        
+
         @objc
         private func sliderMoved(_ slider: UISlider) {
             self.value = slider.value
             sendActions(for: .touchDragInside)
         }
-        
+
         @objc
         private func sliderPressed(_ slider: UISlider) {
             let generator = UIImpactFeedbackGenerator(style: .light)
