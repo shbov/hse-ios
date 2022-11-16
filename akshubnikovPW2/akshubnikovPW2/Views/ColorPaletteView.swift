@@ -52,24 +52,24 @@ public final class ColorPaletteView: UIControl {
         switch slider.tag {
         case 0:
             self.chosenColor = UIColor(
-                red: CGFloat(slider.value),
-                green: chosenColor.rgba.green,
-                blue: chosenColor.rgba.blue,
-                alpha: chosenColor.rgba.alpha
+                    red: CGFloat(slider.value),
+                    green: chosenColor.rgba.green,
+                    blue: chosenColor.rgba.blue,
+                    alpha: chosenColor.rgba.alpha
             )
         case 1:
             self.chosenColor = UIColor(
-                red: chosenColor.rgba.red,
-                green: CGFloat(slider.value),
-                blue: chosenColor.rgba.blue,
-                alpha: chosenColor.rgba.alpha
+                    red: chosenColor.rgba.red,
+                    green: CGFloat(slider.value),
+                    blue: chosenColor.rgba.blue,
+                    alpha: chosenColor.rgba.alpha
             )
         default:
             self.chosenColor = UIColor(
-                red: chosenColor.rgba.red,
-                green: chosenColor.rgba.green,
-                blue: CGFloat(slider.value),
-                alpha: chosenColor.rgba.alpha
+                    red: chosenColor.rgba.red,
+                    green: chosenColor.rgba.green,
+                    blue: CGFloat(slider.value),
+                    alpha: chosenColor.rgba.alpha
             )
         }
 

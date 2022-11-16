@@ -37,8 +37,8 @@ final class WelcomeViewController: UIViewController {
         incrementButton.pin(to: self.view, [.left, .right], 24)
 
         incrementButton.addTarget(self,
-                                  action: #selector(incrementButtonPressed),
-                                  for: .touchUpInside
+                action: #selector(incrementButtonPressed),
+                for: .touchUpInside
         )
     }
 
@@ -158,6 +158,7 @@ final class WelcomeViewController: UIViewController {
         buttonsSV.pinBottom(to: self.view, 24)
 
         colorsButton.addTarget(self, action: #selector(paletteButtonPressed), for: .touchUpInside)
+        notesButton.addTarget(self, action: #selector(noteButtonPressed), for: .touchUpInside)
     }
 
     private func setupColorControlSV() {
@@ -167,20 +168,20 @@ final class WelcomeViewController: UIViewController {
 
         NSLayoutConstraint.activate([
             colorPaletteView.topAnchor.constraint(
-                equalTo: incrementButton.bottomAnchor,
-                constant: 8
+                    equalTo: incrementButton.bottomAnchor,
+                    constant: 8
             ),
             colorPaletteView.leadingAnchor.constraint(
-                equalTo: view.safeAreaLayoutGuide.leadingAnchor,
-                constant: 24
+                    equalTo: view.safeAreaLayoutGuide.leadingAnchor,
+                    constant: 24
             ),
             colorPaletteView.trailingAnchor.constraint(
-                equalTo: view.safeAreaLayoutGuide.trailingAnchor,
-                constant: -24
+                    equalTo: view.safeAreaLayoutGuide.trailingAnchor,
+                    constant: -24
             ),
             colorPaletteView.bottomAnchor.constraint(
-                equalTo: buttonsSV.topAnchor,
-                constant: -8
+                    equalTo: buttonsSV.topAnchor,
+                    constant: -8
             )
         ])
 
@@ -196,12 +197,22 @@ final class WelcomeViewController: UIViewController {
     }
 
     @objc
+    private func noteButtonPressed() {
+//        colorPaletteView.isHidden = true
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
+
+        let notesController = NotesViewController()
+        navigationController?.pushViewController(notesController, animated: true)
+    }
+
+    @objc
     private func changeColor() {
         UIView.animate(
-            withDuration: 0.5,
-            animations: {
-                self.view.backgroundColor = self.colorPaletteView.chosenColor
-            }
+                withDuration: 0.5,
+                animations: {
+                    self.view.backgroundColor = self.colorPaletteView.chosenColor
+                }
         )
     }
 }

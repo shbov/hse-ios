@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68553050BC769B973E0503F1 /* AddNoteDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68553AFD3FEEC0F79ACB0AB5 /* AddNoteDelegate.swift */; };
 		A0347282290D77D900A00ED7 /* ColorPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0347281290D77D900A00ED7 /* ColorPaletteView.swift */; };
 		A0347285290D799300A00ED7 /* ColorPaletteViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0347284290D799300A00ED7 /* ColorPaletteViewExtension.swift */; };
 		A0347289290D7E9300A00ED7 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0347288290D7E9300A00ED7 /* UIColorExtension.swift */; };
@@ -16,9 +17,15 @@
 		A049666028E5D27B00909175 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A049665F28E5D27B00909175 /* WelcomeViewController.swift */; };
 		A049666228E5D5F800909175 /* UIView_Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A049666128E5D5F800909175 /* UIView_Pin.swift */; };
 		A049666428E5E8E400909175 /* CALayer+ApplyShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A049666328E5E8E400909175 /* CALayer+ApplyShadow.swift */; };
+		A0A1AAAA2924F2F4009A5F92 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A1AAA92924F2F4009A5F92 /* NotesViewController.swift */; };
+		A0A87522292581280079CA9E /* NotesViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A87521292581280079CA9E /* NotesViewControllerExtension.swift */; };
+		A0A87525292582430079CA9E /* ShortNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A87524292582430079CA9E /* ShortNote.swift */; };
+		A0A875282925826B0079CA9E /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A875272925826B0079CA9E /* NoteCell.swift */; };
+		A0A8752A29258C960079CA9E /* AddNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A8752929258C960079CA9E /* AddNoteCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		68553AFD3FEEC0F79ACB0AB5 /* AddNoteDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNoteDelegate.swift; sourceTree = "<group>"; };
 		A0347281290D77D900A00ED7 /* ColorPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPaletteView.swift; sourceTree = "<group>"; };
 		A0347284290D799300A00ED7 /* ColorPaletteViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPaletteViewExtension.swift; sourceTree = "<group>"; };
 		A0347288290D7E9300A00ED7 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -30,6 +37,11 @@
 		A049665F28E5D27B00909175 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		A049666128E5D5F800909175 /* UIView_Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView_Pin.swift; sourceTree = "<group>"; };
 		A049666328E5E8E400909175 /* CALayer+ApplyShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+ApplyShadow.swift"; sourceTree = "<group>"; };
+		A0A1AAA92924F2F4009A5F92 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		A0A87521292581280079CA9E /* NotesViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewControllerExtension.swift; sourceTree = "<group>"; };
+		A0A87524292582430079CA9E /* ShortNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortNote.swift; sourceTree = "<group>"; };
+		A0A875272925826B0079CA9E /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		A0A8752929258C960079CA9E /* AddNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,11 +55,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6855321A50C93A4637A33D97 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				68553AFD3FEEC0F79ACB0AB5 /* AddNoteDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		A0347283290D798800A00ED7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				A0347284290D799300A00ED7 /* ColorPaletteViewExtension.swift */,
 				A0347288290D7E9300A00ED7 /* UIColorExtension.swift */,
+				A0A87521292581280079CA9E /* NotesViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -71,6 +92,8 @@
 		A049664A28E5D13100909175 /* akshubnikovPW2 */ = {
 			isa = PBXGroup;
 			children = (
+				A0A87526292582650079CA9E /* Models */,
+				A0A875232925822F0079CA9E /* Structs */,
 				A0347283290D798800A00ED7 /* Extensions */,
 				A049664B28E5D13100909175 /* AppDelegate.swift */,
 				A049666528E5EF6C00909175 /* Views */,
@@ -78,6 +101,7 @@
 				A049665428E5D13400909175 /* Assets.xcassets */,
 				A049665928E5D13400909175 /* Info.plist */,
 				A049666628E5EF7B00909175 /* Controllers */,
+				6855321A50C93A4637A33D97 /* Protocols */,
 			);
 			path = akshubnikovPW2;
 			sourceTree = "<group>";
@@ -95,9 +119,27 @@
 		A049666628E5EF7B00909175 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A0A1AAA92924F2F4009A5F92 /* NotesViewController.swift */,
 				A049665F28E5D27B00909175 /* WelcomeViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A0A875232925822F0079CA9E /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				A0A87524292582430079CA9E /* ShortNote.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		A0A87526292582650079CA9E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A0A875272925826B0079CA9E /* NoteCell.swift */,
+				A0A8752929258C960079CA9E /* AddNoteCell.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,6 +152,7 @@
 				A049664428E5D13100909175 /* Sources */,
 				A049664528E5D13100909175 /* Frameworks */,
 				A049664628E5D13100909175 /* Resources */,
+				A0A1AAAB2924F47E009A5F92 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -164,19 +207,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A0A1AAAB2924F47E009A5F92 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A049664428E5D13100909175 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0A8752A29258C960079CA9E /* AddNoteCell.swift in Sources */,
 				A049666028E5D27B00909175 /* WelcomeViewController.swift in Sources */,
 				A049664C28E5D13100909175 /* AppDelegate.swift in Sources */,
 				A0347285290D799300A00ED7 /* ColorPaletteViewExtension.swift in Sources */,
+				A0A875282925826B0079CA9E /* NoteCell.swift in Sources */,
 				A0347289290D7E9300A00ED7 /* UIColorExtension.swift in Sources */,
 				A049666228E5D5F800909175 /* UIView_Pin.swift in Sources */,
+				A0A1AAAA2924F2F4009A5F92 /* NotesViewController.swift in Sources */,
+				A0A87522292581280079CA9E /* NotesViewControllerExtension.swift in Sources */,
 				A049666428E5E8E400909175 /* CALayer+ApplyShadow.swift in Sources */,
 				A0347282290D77D900A00ED7 /* ColorPaletteView.swift in Sources */,
+				A0A87525292582430079CA9E /* ShortNote.swift in Sources */,
 				A049664E28E5D13100909175 /* SceneDelegate.swift in Sources */,
+				68553050BC769B973E0503F1 /* AddNoteDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,11 +372,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = MA9ZVR88CQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = akshubnikovPW2/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = clicker.;
+				INFOPLIST_KEY_CFBundleDisplayName = "super app.";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
@@ -318,7 +387,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = shbov.akshubnikovPW2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -336,11 +405,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = MA9ZVR88CQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = akshubnikovPW2/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = clicker.;
+				INFOPLIST_KEY_CFBundleDisplayName = "super app.";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
@@ -351,7 +420,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = shbov.akshubnikovPW2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
