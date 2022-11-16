@@ -92,7 +92,6 @@
 		A049664A28E5D13100909175 /* akshubnikovPW2 */ = {
 			isa = PBXGroup;
 			children = (
-				A0A87526292582650079CA9E /* Models */,
 				A0A875232925822F0079CA9E /* Structs */,
 				A0347283290D798800A00ED7 /* Extensions */,
 				A049664B28E5D13100909175 /* AppDelegate.swift */,
@@ -109,6 +108,8 @@
 		A049666528E5EF6C00909175 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A0A875272925826B0079CA9E /* NoteCell.swift */,
+				A0A8752929258C960079CA9E /* AddNoteCell.swift */,
 				A049666328E5E8E400909175 /* CALayer+ApplyShadow.swift */,
 				A049666128E5D5F800909175 /* UIView_Pin.swift */,
 				A0347281290D77D900A00ED7 /* ColorPaletteView.swift */,
@@ -131,15 +132,6 @@
 				A0A87524292582430079CA9E /* ShortNote.swift */,
 			);
 			path = Structs;
-			sourceTree = "<group>";
-		};
-		A0A87526292582650079CA9E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				A0A875272925826B0079CA9E /* NoteCell.swift */,
-				A0A8752929258C960079CA9E /* AddNoteCell.swift */,
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
