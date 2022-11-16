@@ -45,22 +45,10 @@ final class NotesViewController: UIViewController {
 
     private func setupNavBar() {
         self.title = "Notes"
-
-//        let closeButton = UIButton(type: .close)
-//        closeButton.addTarget(self,
-//                action: #selector(dismissViewController),
-//                for: .touchUpInside)
-    
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: closeButton)
     }
 
     public func handleDelete(indexPath: IndexPath) {
         dataSource.remove(at: indexPath.row)
         tableView.reloadData()
-    }
-
-    @objc
-    private func dismissViewController() {
-        dismiss(animated: true)
     }
 }

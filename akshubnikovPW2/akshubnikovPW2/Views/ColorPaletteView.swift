@@ -36,7 +36,7 @@ public final class ColorPaletteView: UIControl {
         stackView.addArrangedSubview(redControl)
         stackView.addArrangedSubview(greenControl)
         stackView.addArrangedSubview(blueControl)
-        stackView.backgroundColor = .white
+        stackView.backgroundColor = .systemBackground
         stackView.layer.cornerRadius = 12
 
         [redControl, greenControl, blueControl].forEach {

@@ -60,7 +60,7 @@ final class AddNoteCell: UITableViewCell, UITextViewDelegate {
 
     private func showTextLabel() {
         textView.textColor = .tertiaryLabel
-        textView.text = "Начните вводить тут..."
+        textView.text = "Start typing..."
     }
 
     fileprivate func setupTextView() {
@@ -80,7 +80,7 @@ final class AddNoteCell: UITableViewCell, UITextViewDelegate {
         contentView.addSubview(stackView)
 
         stackView.pin(to: contentView, [.top, .right, .left, .bottom], 16)
-        contentView.backgroundColor = .systemGray5
+        contentView.backgroundColor = .secondarySystemBackground
     }
 
     private func setupView() {
@@ -102,7 +102,7 @@ final class AddNoteCell: UITableViewCell, UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == .tertiaryLabel {
             textView.text = ""
-            textView.textColor = .black
+            textView.textColor = .label
         }
     }
 

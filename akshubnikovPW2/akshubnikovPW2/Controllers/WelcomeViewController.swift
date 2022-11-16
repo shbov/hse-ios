@@ -25,10 +25,10 @@ final class WelcomeViewController: UIViewController {
 
     private func setupIncrementButton() {
         incrementButton.setTitle("Press me", for: .normal)
-        incrementButton.setTitleColor(.black, for: .normal)
+        incrementButton.setTitleColor(.label, for: .normal)
         incrementButton.layer.cornerRadius = 12
         incrementButton.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .medium)
-        incrementButton.backgroundColor = .white
+        incrementButton.backgroundColor = .systemBackground
         incrementButton.layer.applyShadow()
 
         self.view.addSubview(incrementButton)
@@ -44,16 +44,16 @@ final class WelcomeViewController: UIViewController {
 
     private func setupValueLabel() {
         valueLabel.font = .systemFont(ofSize: 40.0, weight: .bold)
-        valueLabel.textColor = .black
+        valueLabel.textColor = .label
         valueLabel.text = "\(value)"
+
         self.view.addSubview(valueLabel)
         valueLabel.pinBottom(to: incrementButton.topAnchor, 16)
         valueLabel.pinCenterX(to: self.view.centerXAnchor)
     }
 
     private func setupView() {
-        view.backgroundColor = .systemGray6
-        // commentView.isHidden = true
+        view.backgroundColor = .secondarySystemBackground
 
         colorPaletteView.isHidden = true
         setupIncrementButton()
@@ -65,14 +65,14 @@ final class WelcomeViewController: UIViewController {
 
     @discardableResult
     private func setupCommentView() -> UIView {
-        commentView.backgroundColor = .white
+        commentView.backgroundColor = .systemBackground
         commentView.layer.cornerRadius = 12
         view.addSubview(commentView)
 
         commentView.pinTop(to: self.view.safeAreaLayoutGuide.topAnchor)
         commentView.pin(to: self.view, [.left, .right], 24)
         commentLabel.font = .systemFont(ofSize: 14.0, weight: .regular)
-        commentLabel.textColor = .systemGray
+        commentLabel.textColor = .label
         commentLabel.numberOfLines = 0
         commentLabel.textAlignment = .center
         commentLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -130,10 +130,10 @@ final class WelcomeViewController: UIViewController {
     private func makeMenuButton(title: String) -> UIButton {
         let button = UIButton()
         button.setTitle(title, for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.label, for: .normal)
         button.layer.cornerRadius = 12
         button.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .medium)
-        button.backgroundColor = .white
+        button.backgroundColor = .systemBackground
         button.heightAnchor.constraint(equalTo: button.widthAnchor).isActive = true
         return button
     }
@@ -152,6 +152,7 @@ final class WelcomeViewController: UIViewController {
         buttonsSV.spacing = 12
         buttonsSV.axis = .horizontal
         buttonsSV.distribution = .fillEqually
+
         self.view.addSubview(buttonsSV)
 
         buttonsSV.pin(to: self.view, [.left, .right], 24)
@@ -164,6 +165,7 @@ final class WelcomeViewController: UIViewController {
     private func setupColorControlSV() {
         colorPaletteView.isHidden = true
         view.addSubview(colorPaletteView)
+
         colorPaletteView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
