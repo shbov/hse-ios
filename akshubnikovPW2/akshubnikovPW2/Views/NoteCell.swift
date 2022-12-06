@@ -12,7 +12,6 @@ final class NoteCell: UITableViewCell {
     private var textlabel = UILabel()
 
     // MARK: - Init
-
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
@@ -43,5 +42,4 @@ final class NoteCell: UITableViewCell {
     public func configure(_ note: ShortNote) {
         textlabel.text = note.text
     }
-
 }

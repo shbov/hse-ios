@@ -160,6 +160,7 @@ final class WelcomeViewController: UIViewController {
 
         colorsButton.addTarget(self, action: #selector(paletteButtonPressed), for: .touchUpInside)
         notesButton.addTarget(self, action: #selector(noteButtonPressed), for: .touchUpInside)
+        newsButton.addTarget(self, action: #selector(newsButtonPressed), for: .touchUpInside)
     }
 
     private func setupColorControlSV() {
@@ -216,5 +217,11 @@ final class WelcomeViewController: UIViewController {
                     self.view.backgroundColor = self.colorPaletteView.chosenColor
                 }
         )
+    }
+
+    @objc
+    private func newsButtonPressed() {
+        let newsListController = NewsListViewController()
+        navigationController?.pushViewController(newsListController, animated: true)
     }
 }
