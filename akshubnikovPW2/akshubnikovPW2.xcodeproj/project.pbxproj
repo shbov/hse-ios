@@ -23,6 +23,8 @@
 		A07B7B7A293F928900EA24D9 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B7B79293F928900EA24D9 /* NewsViewModel.swift */; };
 		A07B7B7C293F93F700EA24D9 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B7B7B293F93F700EA24D9 /* NewsViewController.swift */; };
 		A07B7B7F293F957400EA24D9 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B7B7E293F957400EA24D9 /* ApiService.swift */; };
+		A07B7B83293FCEAB00EA24D9 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B7B82293FCEAB00EA24D9 /* ImageCache.swift */; };
+		A07B7B86293FCEE100EA24D9 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B7B85293FCEE100EA24D9 /* ImageLoader.swift */; };
 		A0A1AAAA2924F2F4009A5F92 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A1AAA92924F2F4009A5F92 /* NotesViewController.swift */; };
 		A0A87522292581280079CA9E /* NotesViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A87521292581280079CA9E /* NotesViewControllerExtension.swift */; };
 		A0A87525292582430079CA9E /* ShortNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A87524292582430079CA9E /* ShortNote.swift */; };
@@ -49,6 +51,8 @@
 		A07B7B79293F928900EA24D9 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		A07B7B7B293F93F700EA24D9 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		A07B7B7E293F957400EA24D9 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		A07B7B82293FCEAB00EA24D9 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		A07B7B85293FCEE100EA24D9 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		A0A1AAA92924F2F4009A5F92 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		A0A87521292581280079CA9E /* NotesViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewControllerExtension.swift; sourceTree = "<group>"; };
 		A0A87524292582430079CA9E /* ShortNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortNote.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 				A049665928E5D13400909175 /* Info.plist */,
 				A049666628E5EF7B00909175 /* Controllers */,
 				6855321A50C93A4637A33D97 /* Protocols */,
+				A07B7B84293FCEB300EA24D9 /* Sources */,
 			);
 			path = akshubnikovPW2;
 			sourceTree = "<group>";
@@ -149,6 +154,15 @@
 				A07B7B7E293F957400EA24D9 /* ApiService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		A07B7B84293FCEB300EA24D9 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A07B7B82293FCEAB00EA24D9 /* ImageCache.swift */,
+				A07B7B85293FCEE100EA24D9 /* ImageLoader.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		A0A875232925822F0079CA9E /* Structs */ = {
@@ -266,10 +280,12 @@
 				A0A87522292581280079CA9E /* NotesViewControllerExtension.swift in Sources */,
 				A049666428E5E8E400909175 /* CALayer+ApplyShadow.swift in Sources */,
 				A0347282290D77D900A00ED7 /* ColorPaletteView.swift in Sources */,
+				A07B7B86293FCEE100EA24D9 /* ImageLoader.swift in Sources */,
 				A07B7B78293F8FF800EA24D9 /* NewsCell.swift in Sources */,
 				A0A87525292582430079CA9E /* ShortNote.swift in Sources */,
 				A049664E28E5D13100909175 /* SceneDelegate.swift in Sources */,
 				68553050BC769B973E0503F1 /* AddNoteDelegate.swift in Sources */,
+				A07B7B83293FCEAB00EA24D9 /* ImageCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,7 +412,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = MA9ZVR88CQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = akshubnikovPW2/Info.plist;
@@ -411,7 +427,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = shbov.akshubnikovPW2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -429,7 +445,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = MA9ZVR88CQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = akshubnikovPW2/Info.plist;
@@ -444,7 +460,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = shbov.akshubnikovPW2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import Combine
 
 final class NewsCell: UITableViewCell {
     static let reuseIdentifier = "NewsCell"
     private let newsImageView = UIImageView()
     private let newsTitleLabel = UILabel()
     private let newsDescriptionLabel = UILabel()
+    private var cancellable: AnyCancellable?
 
     // MARK: - Init
 
@@ -89,33 +91,24 @@ final class NewsCell: UITableViewCell {
                 constant: -12).isActive = true
     }
 
-    public func configure(_ news: NewsCell) {
-        newsTitleLabel.text = news.newsTitleLabel.text
-        newsDescriptionLabel.text = news.newsDescriptionLabel.text
-        newsImageView.image = news.newsImageView.image
+    private func loadImage(for news: NewsViewModel) -> AnyPublisher<UIImage?, Never> {
+        return Just(news.urlToImage)
+                .flatMap({ _ -> AnyPublisher<UIImage?, Never> in
+                    let url = news.urlToImage!
+                    return ImageLoader.shared.loadImage(from: url)
+                })
+                .eraseToAnyPublisher()
     }
 
-    private func setupImage(_ news: NewsViewModel) {
-        if let data = news.imageData {
-            newsImageView.image = UIImage(data: data)
-        } else if let url = news.urlToImage {
-            URLSession.shared.dataTask(with: news.urlToImage!) { [weak self] data, _, _ in
-                        guard let data = data else {
-                            return
-                        }
-
-                        DispatchQueue.main.async {
-                            news.imageData = data
-                            self?.newsImageView.image = UIImage(data: news.imageData ?? Data())
-                        }
-                    }
-                    .resume()
-        }
+    private func showImage(image: UIImage?) {
+        newsImageView.image = image
     }
 
     public func configure(_ news: NewsViewModel) {
         newsTitleLabel.text = news.title
         newsDescriptionLabel.text = news.description == "" ? "No description" : news.description
-        setupImage(news)
+        cancellable = loadImage(for: news).sink { [unowned self] image in
+            self.showImage(image: image)
+        }
     }
 }

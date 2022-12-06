@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import Combine
 
 final class NewsViewController: UIViewController {
     private var imageView = UIImageView()
     private var titleLabel = UILabel()
     private var descriptionLabel = UILabel()
+    private var cancellable: AnyCancellable?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,9 +23,8 @@ final class NewsViewController: UIViewController {
         DispatchQueue.main.async {
             self.titleLabel.text = viewModel.title
             self.descriptionLabel.text = viewModel.description
+            self.setupImage(viewModel)
         }
-
-        setupImage(viewModel)
     }
 
     // MARK: - Private methods
@@ -83,23 +84,22 @@ final class NewsViewController: UIViewController {
         descriptionLabel.pinTop(to: titleLabel.bottomAnchor, 8)
     }
 
-    private func setupImage(_ news: NewsViewModel) {
-        if let data = news.imageData {
-            DispatchQueue.main.async {
-                self.imageView.image = UIImage(data: data)
-            }
-        } else if let url = news.urlToImage {
-            URLSession.shared.dataTask(with: url) { [weak self] data, _, _ in
-                        guard let data = data else {
-                            return
-                        }
+    private func loadImage(for news: NewsViewModel) -> AnyPublisher<UIImage?, Never> {
+        return Just(news.urlToImage)
+                .flatMap({ _ -> AnyPublisher<UIImage?, Never> in
+                    let url = news.urlToImage!
+                    return ImageLoader.shared.loadImage(from: url)
+                })
+                .eraseToAnyPublisher()
+    }
 
-                        DispatchQueue.main.async {
-                            news.imageData = data
-                            self?.imageView.image = UIImage(data: news.imageData ?? Data())
-                        }
-                    }
-                    .resume()
+    private func showImage(image: UIImage?) {
+        imageView.image = image
+    }
+
+    private func setupImage(_ news: NewsViewModel) {
+        cancellable = loadImage(for: news).sink { [unowned self] image in
+            self.showImage(image: image)
         }
     }
 

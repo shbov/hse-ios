@@ -15,12 +15,20 @@ public class NewsViewModel: Decodable {
     let title: String
     let description: String?
     var urlToImage: URL?
-    var imageData: Data?
 
     init(title: String, description: String?, urlToImage: URL? = nil, imageData: Data? = nil) {
         self.title = title
         self.description = description
         self.urlToImage = urlToImage
-        self.imageData = imageData
+    }
+}
+
+extension NewsViewModel: Hashable {
+    public static func ==(lhs: NewsViewModel, rhs: NewsViewModel) -> Bool {
+        return lhs.title == rhs.title
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(title)
     }
 }
